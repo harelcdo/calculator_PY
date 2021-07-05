@@ -33,11 +33,11 @@ class Calc():
             self.current = firstNum + secondNum
         self.display(self.current)
 
-    def sum_of_total(self):
+    def sumOfTotal(self):
         self.result = True
         self.current = float(self.current)
         if self.check_sum == True:
-            self.valid_function()
+            self.validFunction()
         else:
             self.total = float(txtDisplay.get())
 
@@ -48,7 +48,7 @@ class Calc():
     def operation(self, op):
         self.current = float(self.current)
         if self.check_sum:
-            self.valid_function()
+            self.validFunction()
         elif not self.result:
             self.total = self.current
             self.input_value = True
@@ -56,7 +56,7 @@ class Calc():
         self.op = op
         self.result = False
 
-    def valid_function(self):
+    def validFunction(self):
         if self.op == "add":
             self.total += self.current
         if self.op == "sub":
@@ -75,7 +75,7 @@ class Calc():
         self.display(0)
         self.input_value = True
 
-    def all_Clear_Entry(self):
+    def allClearEntry(self):
         self.clearEntry()
         self.total = 0
 
@@ -136,7 +136,7 @@ for j in range(3, 6):
 btnDelete = Button(calc, width=6, height=2, text="DEL", font=('arial', 16, 'bold'), bd=4, bg="gainsboro",
                    command=added_value.delecBS).grid(row=1, column=0, pady=1)
 btnClear = Button(calc, width=6, height=2, text="C", font=('arial', 16, 'bold'), bd=4, bg="gainsboro",
-                  command=added_value.all_Clear_Entry).grid(row=1, column=1, pady=1)
+                  command=added_value.allClearEntry).grid(row=1, column=1, pady=1)
 btnClearAll = Button(calc, width=6, height=2, text="CE", font=('arial', 16, 'bold'), bd=4, bg="gainsboro",
                      command=added_value.clearEntry).grid(row=1, column=2, pady=1)
 btnPM = Button(calc, width=6, height=2, text=chr(177), font=('arial', 16, 'bold'), bd=4, bg="gainsboro",
@@ -171,6 +171,6 @@ btnZero = Button(calc, width=6, height=2, text="0", font=('arial', 16, 'bold'), 
 btnDot = Button(calc, width=6, height=2, text=".", font=('arial', 16, 'bold'), bd=4, bg="gainsboro",
                 command=added_value.numberEnter).grid(row=6, column=1, pady=1)
 btnEquals = Button(calc, width=6, height=2, text="=", font=('arial', 16, 'bold'), bd=4, bg="gainsboro",
-                   command=added_value.sum_of_total).grid(row=6, column=2, pady=1)
+                   command=added_value.sumOfTotal).grid(row=6, column=2, pady=1)
 
 root.mainloop()
